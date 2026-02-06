@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, #ffdee9, #b5fffc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255,255,255,0.85);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    color: #ff3366;
+    animation: fadeIn 2s ease;
+}
+
+#ring {
+    width: 180px;
+    margin: 20px auto;
+    display: none;
+    animation: pop 1s ease forwards;
+}
+
+#message {
+    display: none;
+    font-size: 18px;
+    color: #333;
+    animation: fadeIn 2s ease forwards;
+}
+
+button {
+    background: #ff3366;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pop {
+    0% {transform: scale(0);}
+    70% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Happy Valentine’s Day Janu Bebu ❤️</h1>
+    <p>You have something special waiting for you…</p>
+    <button onclick="showSurprise()">Tap to see 💝</button>
+
+    <img id="ring" src="https://pngtree.com/freepng/luxury-diamond-engagement-ring_20488498.html" alt="Diamond Ring">
+
+    <p id="message">
+        My love, you are my today, my tomorrow, and my always.  
+        Every heartbeat of mine whispers your name 💕
+    </p>
+</div>
+
+<script>
+function showSurprise() {
+    document.getElementById("ring").style.display = "block";
+    setTimeout(() => {
+        document.getElementById("message").style.display = "block";
+    }, 1200);
+}
+</script>
+
+</body>
+</html>
