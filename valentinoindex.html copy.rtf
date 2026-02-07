@@ -1,0 +1,229 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh17740\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+<meta charset="UTF-8">\
+<meta name="viewport" content="width=device-width, initial-scale=1.0">\
+<title>For My Little Sunflower 
+\f1 \uc0\u55356 \u57147 
+\f0 </title>\
+\
+<style>\
+body \{\
+  margin: 0;\
+  min-height: 100vh;\
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);\
+  font-family: 'Poppins', sans-serif;\
+  display: flex;\
+  justify-content: center;\
+  align-items: center;\
+  overflow: hidden;\
+\}\
+\
+.screen \{\
+  display: none;\
+  background: rgba(255,255,255,0.95);\
+  padding: 26px;\
+  border-radius: 26px;\
+  width: 90%;\
+  max-width: 360px;\
+  text-align: center;\
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);\
+\}\
+\
+.screen.active \{\
+  display: block;\
+  animation: fadeIn 1s ease;\
+\}\
+\
+h1 \{\
+  color: #ff2e63;\
+\}\
+\
+p \{\
+  font-size: 16px;\
+  color: #333;\
+  line-height: 1.5;\
+\}\
+\
+button \{\
+  margin-top: 18px;\
+  padding: 12px 24px;\
+  border: none;\
+  border-radius: 30px;\
+  background: #ff2e63;\
+  color: white;\
+  font-size: 16px;\
+  cursor: pointer;\
+\}\
+\
+iframe \{\
+  margin-top: 15px;\
+  border-radius: 14px;\
+\}\
+\
+@keyframes fadeIn \{\
+  from \{opacity: 0; transform: translateY(20px);\}\
+  to \{opacity: 1; transform: translateY(0);\}\
+\}\
+\
+/* Hearts */\
+.heart \{\
+  position: fixed;\
+  bottom: -20px;\
+  font-size: 18px;\
+  animation: float 6s linear infinite;\
+  color: rgba(255,46,99,0.7);\
+\}\
+\
+@keyframes float \{\
+  to \{transform: translateY(-100vh); opacity: 0;\}\
+\}\
+\
+/* Sunflower thank you screen */\
+.sunflower-bg \{\
+  background: url("https://i.imgur.com/8QfQY6N.png");\
+  background-size: cover;\
+  background-position: center;\
+\}\
+\
+/* Falling petals */\
+.petal \{\
+  position: fixed;\
+  top: -20px;\
+  font-size: 22px;\
+  animation: fall 6s linear infinite;\
+\}\
+\
+@keyframes fall \{\
+  to \{transform: translateY(110vh) rotate(360deg);\}\
+\}\
+\
+/* Cloud */\
+.cloud \{\
+  margin-top: 25px;\
+  background: #fff;\
+  padding: 25px;\
+  border-radius: 50px;\
+  font-size: 18px;\
+  cursor: pointer;\
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);\
+\}\
+</style>\
+</head>\
+\
+<body>\
+\
+<audio id="bgm" loop>\
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">\
+</audio>\
+\
+<div id="s1" class="screen active">\
+  <h1>Hey 
+\f1 \uc0\u10084 \u65039 
+\f0 </h1>\
+  <p>I made something special\'85 just for you.</p>\
+  <button onclick="next(1); playMusic()">Start</button>\
+</div>\
+\
+<div id="s2" class="screen">\
+  <h1>Happy Valentine\'92s 
+\f1 \uc0\u55357 \u56469 
+\f0 </h1>\
+  <p>You make my ordinary days feel magical.</p>\
+  <button onclick="next(2)">Go on\'85</button>\
+</div>\
+\
+<div id="s3" class="screen">\
+  <p>Listen to this\'85 it\'92s us 
+\f1 \uc0\u55356 \u57269 
+\f0 </p>\
+  <iframe width="100%" height="180"\
+    src="https://www.youtube.com/embed/FiENDQapd4g"\
+    allowfullscreen></iframe>\
+  <button onclick="next(3)">I\'92m listening\'85</button>\
+</div>\
+\
+<div id="s4" class="screen">\
+  <p id="final"></p>\
+  <button onclick="next(4)">One last thing\'85</button>\
+</div>\
+\
+<div id="s5" class="screen sunflower-bg">\
+  <h1>Thank You 
+\f1 \uc0\u55356 \u57147 
+\f0 </h1>\
+  <p>\
+    Thank you for choosing me, for loving me,  \
+    and for being my sunshine.\
+  </p>\
+  <div class="cloud" onclick="burstCloud()">
+\f1 \uc0\u9729 \u65039 
+\f0  Click me</div>\
+</div>\
+\
+<script>\
+function next(n) \{\
+  document.getElementById("s"+n).classList.remove("active");\
+  document.getElementById("s"+(n+1)).classList.add("active");\
+\}\
+\
+function playMusic() \{\
+  document.getElementById("bgm").play();\
+\}\
+\
+const text =\
+"My little sunflower 
+\f1 \uc0\u55356 \u57147 
+\f0 , my janu, my bebu\'85 you are my calm on loud days and my strength on quiet ones. I don\'92t promise perfection, but I promise a heart that chooses you \'97 today, tomorrow, and always 
+\f1 \uc0\u55357 \u56470 
+\f0 ";\
+\
+let i = 0;\
+function type() \{\
+  if (i < text.length) \{\
+    document.getElementById("final").innerHTML += text.charAt(i);\
+    i++;\
+    setTimeout(type, 40);\
+  \}\
+\}\
+setTimeout(type, 1500);\
+\
+setInterval(() => \{\
+  const h = document.createElement("div");\
+  h.className = "heart";\
+  h.innerHTML = "
+\f1 \uc0\u10084 \u65039 
+\f0 ";\
+  h.style.left = Math.random() * 100 + "vw";\
+  document.body.appendChild(h);\
+  setTimeout(() => h.remove(), 6000);\
+\}, 400);\
+\
+setInterval(() => \{\
+  const p = document.createElement("div");\
+  p.className = "petal";\
+  p.innerHTML = "
+\f1 \uc0\u55356 \u57147 
+\f0 ";\
+  p.style.left = Math.random() * 100 + "vw";\
+  document.body.appendChild(p);\
+  setTimeout(() => p.remove(), 6000);\
+\}, 700);\
+\
+function burstCloud() \{\
+  alert("I LOVE YOU, MOTU 
+\f1 \uc0\u10084 \u65039 
+\f0 ");\
+\}\
+</script>\
+\
+</body>\
+</html>\
+}
